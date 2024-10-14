@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href= "{% static 'styles/index.css' %}" >
+    {% block links %} {% endblock %}
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+
+          <li><a href="#">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'create' %}">Add blog</a></li>
+          <li><a href="{% url 'logout' %}">logout</a></li>
+          {% else %}
+          <li><a href="{% url 'signup' %}">Sign Up</a></li>
+
+          <li><a href="{% url 'login' %}">login</a></li>
+          {%  endif %}
+        </ul>
+      </nav>
+    </header>
+    {% if user.is_authenticated %}
+    <p>hi {{ user.username }}</p>
+  
+{% endif %}
+    {% for message in messages %}
+    <p class="{{message.tags}}">{{message}}</p>
+    {% endfor %}
+    {% block main %} 
+    {% endblock main %}
+    
+
+    <footer>
+      This is the footer part
+    </footer>
+  </body>
+</html>

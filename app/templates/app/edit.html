@@ -1,0 +1,18 @@
+{% extends "block.html" %}
+{% block main %}
+<p>Hello isreal {{person}}</p>
+<form action="" method="post">
+
+    {% csrf_token %}
+    <label for="" enctype="multipath" method="post">Title</label><br>
+    <input type="text" name="title" value="{{blog.title}}"><br>
+    <label for="">Body</label><br>
+    <textarea name="body" id="" value="{{blog.body}}"></textarea>
+    <input type="file" name="file">
+<img src="{{blog.image.url}}" alt="">
+    
+<label for="">Description</label><br>
+<textarea name="dsc" id="" {{blog.decription}}></textarea><br>
+<button>Edit Blog</button>
+</form>
+{% endblock main %}

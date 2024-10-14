@@ -1,0 +1,16 @@
+{% extends "block.html" %}
+{% load static %}
+{% block main %}
+<ol>
+   <p>Hello World</p>    
+   {% for item in product %}  
+   <li>{{item}} </li>
+   {% endfor %}  
+</ol> 
+
+
+<img src="{% static 'images/abc.png' %}" alt="Our logo">
+{% endblock main %}
+
+
+{% block title %}Amina the senior dev {% endblock title %}

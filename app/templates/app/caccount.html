@@ -1,0 +1,20 @@
+{% extends "block.html" %}
+{% block main %}
+<form action="" method="post">
+    {% csrf_token %}
+<label for="">Username</label>
+<input type="text" name="username"><br>
+<label for="">Enail</label>
+<input type="email" name="email"><br>
+<label for="">FirstName</label>
+<input type="text" name="firstname"><br>
+<label for="">Lastname</label>
+<input type="text" name="lastname"><br>
+<label for="">Passsowrd</label>
+<input type="password" name="password"><br>
+<label for="">Confrm</label>
+<input type="password" name="cpassword"><br>
+<button>Create Account</button>
+
+</form>
+{% endblock main %}
